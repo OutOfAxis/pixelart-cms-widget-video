@@ -1,0 +1,64 @@
+<div>
+  <div class='caption'>
+    Video url:
+  </div>
+  <div class='inp'>
+    <input id='inp' autofocus />
+  </div>
+</div>
+
+<script>
+
+  var id;
+  var param = {};
+
+  window.addEventListener('message', function (e) {
+    if (e.data.method === 'setParam') {
+        document.getElementById('inp').value = e.data.param.src || '';
+        e.source.postMessage({ method: 'ready', id: e.data.id }, e.origin);
+        id = e.data.id;
+    } else if (e.data.method === 'getParam') {
+      e.source.postMessage({
+        method: 'setParam',
+        id: id,
+        param: {
+          src: document.getElementById('inp').value,
+        },
+      }, e.origin);
+    } else {
+      console.log('Uknown event', e);
+    }
+
+    document.getElementById('inp')
+      .addEventListener('keyup', function(event) {
+        event.preventDefault();
+        if (event.keyCode == 13) {
+          // FIX: repetition
+          e.source.postMessage({
+            method: 'setParam',
+            id: id,
+            param: {
+              src: document.getElementById('inp').value,
+            },
+          }, e.origin);
+        }
+      });
+  }, false);
+
+</script>
+
+<style>
+  .caption {
+    color: #555;
+    font-family: Helvetica;
+    font-size: 22px;
+  }
+  .inp {
+    width: 100%;
+    height: 22px;
+  }
+  #inp {
+    width: 100%;
+    height: 22px;
+  }
+</style>
