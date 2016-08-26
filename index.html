@@ -9,10 +9,25 @@
 
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
-      document.getElementById('src').src = e.data.param.src || '';
+      var vid = document.getElementById('src');
+      
+      vid.src = e.data.param.src || '';
       e.source.postMessage({ method: 'ready', id: e.data.id }, e.origin);
       id = e.data.id;
+
+      vid.addEventListener('ended', function() {
+        e.source.postMessage({
+          method: 'done',
+          id: id,
+          param: {
+            src: document.getElementById('src').src,
+          },
+        }, e.origin);
+      });
+      vid.play();
+      
     } else if (e.data.method === 'getParam') {
+
       e.source.postMessage({
         method: 'setParam',
         id: id,
@@ -20,6 +35,7 @@
           src: document.getElementById('src').src,
         },
       }, e.origin);
+
     } else {
       console.log('Uknown event', e);
     }
