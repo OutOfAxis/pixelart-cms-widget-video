@@ -19,9 +19,6 @@
         e.source.postMessage({
           method: 'done',
           id: id,
-          param: {
-            src: document.getElementById('src').src,
-          },
         }, e.origin);
       });
       vid.play();
