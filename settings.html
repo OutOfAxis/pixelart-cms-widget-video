@@ -14,9 +14,15 @@
 
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
-        document.getElementById('inp').value = e.data.param.src || '';
-        e.source.postMessage({ method: 'ready', id: e.data.id }, e.origin);
-        id = e.data.id;
+      document.getElementById('inp').value = e.data.param.src || '';
+      
+      e.source.postMessage({
+        method: 'ready',
+        id: e.data.id,
+        type: 'settings',
+      }, e.origin);
+      
+      id = e.data.id;
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
         method: 'setParam',
@@ -24,6 +30,7 @@
         param: {
           src: document.getElementById('inp').value,
         },
+        type: 'settings',
       }, e.origin);
     } else {
       console.log('Uknown event', e);
@@ -37,6 +44,7 @@
           e.source.postMessage({
             method: 'setParam',
             id: id,
+            type: 'settings',
             param: {
               src: document.getElementById('inp').value,
             },

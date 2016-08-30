@@ -12,13 +12,18 @@
       var vid = document.getElementById('src');
       
       vid.src = e.data.param.src || '';
-      e.source.postMessage({ method: 'ready', id: e.data.id }, e.origin);
+      e.source.postMessage({
+        method: 'ready',
+        id: e.data.id,
+        type: 'widget',
+      }, e.origin);
       id = e.data.id;
 
       vid.addEventListener('ended', function() {
         e.source.postMessage({
           method: 'done',
           id: id,
+          type: 'widget',
         }, e.origin);
       });
       vid.play();
@@ -31,6 +36,7 @@
         param: {
           src: document.getElementById('src').src,
         },
+        type: 'widget',
       }, e.origin);
 
     } else {
