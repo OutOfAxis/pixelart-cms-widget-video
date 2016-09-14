@@ -1,4 +1,4 @@
-<video id='src' height='100%'' width='100%'>
+<video id='src' height='100%' width='100%'>
   Your browser does not support HTML5 video.
 </video>
 
@@ -8,16 +8,19 @@
   var param = {};
 
   window.addEventListener('message', function (e) {
+    id = e.data.id;
+
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('src');
-      
       vid.src = e.data.param.src || '';
-      e.source.postMessage({
-        method: 'ready',
-        id: e.data.id,
-        type: 'widget',
-      }, e.origin);
-      id = e.data.id;
+
+      vid.addEventListener('canplay', function () {
+        e.source.postMessage({
+          method: 'ready',
+          id: e.data.id,
+          type: 'widget',
+        }, e.origin);
+      });
 
       vid.addEventListener('ended', function() {
         e.source.postMessage({
@@ -40,7 +43,7 @@
       }, e.origin);
 
     } else {
-      console.log('Uknown event', e);
+      console.log('Unknown event', e);
     }
   }, false);
 
