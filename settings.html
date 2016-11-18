@@ -1,10 +1,33 @@
-<div>
+<div class="wrapper">
   <div class='caption'>
     Video url:
   </div>
   <div class='inp'>
     <input id='inp' autofocus />
   </div>
+  <div>
+    <div class='caption'>
+      Fit:
+    </div>
+    <div class='inp'>
+      <select id='fit'>
+        <option value='stretch'>Stretch</option>
+        <option value='center'>Center</option>
+        <option value='fitw'>Fit Width</option>
+        <option value='fith'>Fit Height</option>
+        <option value='tiling'>Tiling</option>
+      </select>
+    </div>
+  </div>
+  <div>
+    <div class='caption'>
+      Duration (secs):
+    </div>
+    <div class='inp'>
+      <input type='number' id='duration' />
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -15,13 +38,13 @@
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
       document.getElementById('inp').value = e.data.param.src || '';
-      
+
       e.source.postMessage({
         method: 'ready',
         id: e.data.id,
         type: 'settings',
       }, e.origin);
-      
+
       id = e.data.id;
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
@@ -56,17 +79,62 @@
 </script>
 
 <style>
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   .caption {
+    color: rgb(154, 154, 154);
+    font-family: Tahoma;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 2px;
+    font-size: 12px;
+  }
+
+  #inp, #duration {
+    width: 100%;
+    border-radius: 0px;
+    background: rgba(234, 236, 238, 0.631373);
+    color: rgb(51, 55, 70);
+    height: 36px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    width: 100%;
+    border: 1px solid rgb(236, 236, 236);
+  }
+
+   #duration:focus, #inp:focus {
+    box-shadow: none;
+    border: 1px solid rgba(155, 187, 171, 0.55);
+    outline: none !important;
+  }
+
+  select#fit {
+    display: block;
+    -webkit-appearance: button;
+    background: url(select-arrow.png) #F4F4F4;
+    background-size: 8px 8px;
+    background-position: 97% center;
+    background-repeat: no-repeat;
+    border-radius: 0px;
+    height: 36px;
+    border: 1px solid #e0e0e0;
     color: #555;
-    font-family: Helvetica;
-    font-size: 22px;
-  }
-  .inp {
+    font-size: 13px;
+    overflow: hidden;
+    padding: 5px 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
-    height: 22px;
   }
-  #inp {
-    width: 100%;
-    height: 22px;
+
+  select:focus {
+    outline: 1px solid rgba(126, 222, 174, 0.3);
   }
 </style>
