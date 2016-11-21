@@ -23,7 +23,7 @@
       How Many Times Plays:
     </div>
     <div class='inp'>
-      <input type='number' id='duration' />
+      <input type='number' id='inp' />
     </div>
   </div>
 
@@ -36,26 +36,27 @@
 
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
-      document.getElementById('inp').value = e.data.param.src || '';
-
-      e.source.postMessage({
-        method: 'ready',
-        id: e.data.id,
-        type: 'settings',
-      }, e.origin);
-
-      id = e.data.id;
+        document.getElementById('inp').value = e.data.param.src || '';
+        document.getElementById('fit').value = e.data.param.fit || '';
+        e.source.postMessage({
+          method: 'ready',
+          id: e.data.id,
+          type: 'settings',
+        }, e.origin);
+        id = e.data.id;
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
         method: 'setParam',
         id: id,
         param: {
           src: document.getElementById('inp').value,
+          systemPreview: document.getElementById('inp').value,
+          fit: document.getElementById('fit').value,
         },
         type: 'settings',
       }, e.origin);
     } else {
-      console.log('Unknown event', e);
+      console.log('Uknown event', e);
     }
 
     document.getElementById('inp')
@@ -66,10 +67,12 @@
           e.source.postMessage({
             method: 'setParam',
             id: id,
-            type: 'settings',
             param: {
               src: document.getElementById('inp').value,
+              systemPreview: document.getElementById('inp').value,
+              fit: document.getElementById('fit').value,
             },
+            type: 'settings',
           }, e.origin);
         }
       });
@@ -108,7 +111,7 @@
     border: 1px solid rgb(236, 236, 236);
   }
 
-   #duration:focus, #inp:focus {
+  #inp:focus {
     box-shadow: none;
     border: 1px solid rgba(155, 187, 171, 0.55);
     outline: none !important;
