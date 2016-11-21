@@ -9,15 +9,12 @@
   var id;
   var param = {};
 
-
   window.addEventListener('message', function (e) {
     id = e.data.id;
-    if (e.data.method === 'setParam') {
 
-      var videoContainer = document.getElementById('src');
+    if (e.data.method === 'setParam') {
       var vid = document.getElementById('src');
       vid.src = e.data.param.src || '';
-
 
       vid.addEventListener('canplay', function () {
         e.source.postMessage({
@@ -26,6 +23,15 @@
           type: 'widget',
         }, e.origin);
       });
+
+      vid.addEventListener('ended', function() {
+        e.source.postMessage({
+          method: 'done',
+          id: id,
+          type: 'widget',
+        }, e.origin);
+      });
+      vid.play();
 
       if(e.data.param.fit === 'center') {
         videoContainer.style.width = '100%';
@@ -41,18 +47,6 @@
           videoContainer.style.height = 'auto';
           videoContainer.style.position = 'initial';
         }
-
-
-
-
-      vid.addEventListener('ended', function() {
-        e.source.postMessage({
-          method: 'done',
-          id: id,
-          type: 'widget',
-        }, e.origin);
-      });
-      vid.play();
 
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
