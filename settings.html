@@ -23,7 +23,7 @@
       How Many Times Plays:
     </div>
     <div class='inp'>
-      <input type='number' id='inp' />
+      <input type='number' id='duration' />
     </div>
   </div>
 
@@ -38,6 +38,7 @@
     if (e.data.method === 'setParam') {
         document.getElementById('inp').value = e.data.param.src || '';
         document.getElementById('fit').value = e.data.param.fit || '';
+        document.getElementById('duration').value = e.data.param.duration / 1000 || 5;
         e.source.postMessage({
           method: 'ready',
           id: e.data.id,
@@ -52,6 +53,7 @@
           src: document.getElementById('inp').value,
           systemPreview: document.getElementById('inp').value,
           fit: document.getElementById('fit').value,
+          duration: document.getElementById('duration').value * 1000,
         },
         type: 'settings',
       }, e.origin);
@@ -71,11 +73,13 @@
               src: document.getElementById('inp').value,
               systemPreview: document.getElementById('inp').value,
               fit: document.getElementById('fit').value,
+              duration: document.getElementById('duration').value * 1000,
             },
             type: 'settings',
           }, e.origin);
         }
       });
+
   }, false);
 
 </script>
@@ -111,7 +115,7 @@
     border: 1px solid rgb(236, 236, 236);
   }
 
-  #inp:focus {
+  #inp:focus #duration:focus {
     box-shadow: none;
     border: 1px solid rgba(155, 187, 171, 0.55);
     outline: none !important;
