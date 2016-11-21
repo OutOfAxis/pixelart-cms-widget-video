@@ -1,5 +1,6 @@
-<video id='src' height='100%' width='100%'>
+<video id='src' height='100%' width='100%' autoplay="true">
   Your browser does not support HTML5 video.
+  <source src="sample.mp4" type="video/mp4">
 </video>
 
 <script>
@@ -30,9 +31,13 @@
         }, e.origin);
       });
       vid.play();
-      
-    } else if (e.data.method === 'getParam') {
 
+      if(e.data.param.fit === 'strech') {
+        vid.style.width = 300;
+        vid.style.height = 300
+      }
+
+    } else if (e.data.method === 'getParam') {
       e.source.postMessage({
         method: 'setParam',
         id: id,
