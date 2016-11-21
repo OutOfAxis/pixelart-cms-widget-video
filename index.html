@@ -1,7 +1,6 @@
 <div id="video-container">
   <video id='src' autoplay="true" width="100%" height="100%">
     Your browser does not support HTML5 video.
-    <source src="sample.mp4" type="video/mp4">
   </video>
 </div>
 
@@ -15,7 +14,7 @@
     id = e.data.id;
     if (e.data.method === 'setParam') {
 
-      var videoContainer = document.getElementById('video-container');
+      var videoContainer = document.getElementById('src');
       var vid = document.getElementById('src');
       vid.src = e.data.param.src || '';
 
@@ -29,18 +28,18 @@
       });
 
       if(e.data.param.fit === 'center') {
-        src.style.width = '100%';
-        src.style.height = '100%';
+        videoContainer.style.width = '100%';
+        videoContainer.style.height = '100%';
       } else if ( e.data.param.fit === 'fit' ) {
-        src.style.width = '100%';
-        src.style.height = 'auto';
+        videoContainer.style.width = '100%';
+        videoContainer.style.height = 'auto';
       } else if ( e.data.param.fit === 'stretch' ) {
-          src.style.width = 'auto';
-          src.style.height = '100%';
+          videoContainer.style.width = 'auto';
+          videoContainer.style.height = '100%';
       } else if ( e.data.param.fit === 'default' ) {
-          src.style.width = 'auto';
-          src.style.height = 'auto';
-          src.style.position = 'initial';
+          videoContainer.style.width = 'auto';
+          videoContainer.style.height = 'auto';
+          videoContainer.style.position = 'initial';
         }
 
 
@@ -95,7 +94,7 @@
     position: absolute;
     left:0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
 }
 </style>
