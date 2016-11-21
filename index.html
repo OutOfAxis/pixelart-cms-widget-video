@@ -13,7 +13,7 @@
     id = e.data.id;
 
     if (e.data.method === 'setParam') {
-      var vid = document.getElementById('src');
+      var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
       var videoContainer = document.getElementById('video-container');
 
@@ -54,7 +54,7 @@
         method: 'setParam',
         id: id,
         param: {
-          src: document.getElementById('src').src,
+          src: document.getElementById('video-container').src,
         },
         type: 'widget',
       }, e.origin);
