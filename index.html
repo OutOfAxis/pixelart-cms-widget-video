@@ -1,14 +1,12 @@
 <div id="video-bg">
-  <video id='video-container' autoplay="true" >
+  <video id='video-container' autoplay="true">
     Your browser does not support HTML5 video.
   </video>
 </div>
-
 <script>
 
   var id;
   var param = {};
-
   window.addEventListener('message', function (e) {
     id = e.data.id;
 
@@ -16,6 +14,7 @@
       var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
       var videoContainer = document.getElementById('video-container');
+      console.log(vid.duration);
 
       vid.addEventListener('canplay', function () {
         e.source.postMessage({
@@ -52,6 +51,8 @@
           videoContainer.style.position = 'initial';
         }
 
+
+
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
         method: 'setParam',
@@ -70,29 +71,38 @@
 </script>
 
 <style>
-  #video-bg {
-    position: fixed;
-    display: flex;
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  #video-container {
-    position: absolute;
-    left:0;
-    top: 0;
-    width: auto;
-    height: auto;
+/*   #video-bg {
+  position: fixed;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
 }
+
+#video-container {
+  position: absolute;
+  left:0;
+  top: 0;
+  width: auto;
+  height: auto;
+}
+ */
+/* #number, button {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+
+} */
 </style>
