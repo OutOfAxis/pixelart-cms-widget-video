@@ -1,19 +1,32 @@
 <div id="video-bg">
-  <video id='video-container' autoplay="true">
+  <video id='video-container' autoplay="true" >
     Your browser does not support HTML5 video.
   </video>
 </div>
+
+<input type="text" name="f_du" id"f_du">
+
+
 <script>
 
   var id;
   var param = {};
+
+
+
+
+
   window.addEventListener('message', function (e) {
     id = e.data.id;
 
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
+      var f_duration = 0;  //store duration
       var videoContainer = document.getElementById('video-container');
+
+      f_duration = Math.round(e.currentTarget.duration);
+      document.getElementById('duration').value = f_duration;
       console.log(vid.duration);
 
       vid.addEventListener('canplay', function () {
@@ -71,7 +84,7 @@
 </script>
 
 <style>
-/*   #video-bg {
+#video-bg {
   position: fixed;
   display: flex;
   align-content: center;
@@ -96,13 +109,12 @@
   width: auto;
   height: auto;
 }
- */
-/* #number, button {
+#number, button {
   width: 100px;
   height: 100px;
   position: absolute;
   bottom: 0;
   z-index: 2;
 
-} */
+}
 </style>
