@@ -1,5 +1,5 @@
 <div id="video-bg">
-  <video id='video-container' autoplay="true" >
+  <video id='video-container' autoplay="true" src="sample.mp4">
     Your browser does not support HTML5 video.
   </video>
 </div>
@@ -10,6 +10,18 @@
 
 
 
+  var video = document.getElementById('video-container');
+  var i = setInterval(function() {
+    if(video.readyState > 0) {
+      var minutes = parseInt(video.duration / 60, 10);
+      var seconds = video.duration % 60;
+      //f_duration = seconds;
+      //document.getElementById('number').value = f_duration;
+      console.log(seconds);
+      clearInterval(i);
+    }
+  }, 200);
+
 
 
   window.addEventListener('message', function (e) {
@@ -18,12 +30,9 @@
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
-      var f_duration = 0;  //store duration
-      var videoContainer = document.getElementById('video-container');
 
-      // f_duration = Math.round(e.currentTarget.duration);
-      // document.getElementById('duration').value = f_duration;
-      console.log(vid.duration);
+
+
 
       vid.addEventListener('canplay', function () {
         e.source.postMessage({
