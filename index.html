@@ -3,10 +3,6 @@
     Your browser does not support HTML5 video.
   </video>
 </div>
-
-<input type="text" name="f_du" id"f_du">
-
-
 <script>
 
   var id;
@@ -25,8 +21,8 @@
       var f_duration = 0;  //store duration
       var videoContainer = document.getElementById('video-container');
 
-      f_duration = Math.round(e.currentTarget.duration);
-      document.getElementById('duration').value = f_duration;
+      // f_duration = Math.round(e.currentTarget.duration);
+      // document.getElementById('duration').value = f_duration;
       console.log(vid.duration);
 
       vid.addEventListener('canplay', function () {
