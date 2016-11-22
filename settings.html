@@ -38,7 +38,7 @@
     if (e.data.method === 'setParam') {
         document.getElementById('inp').value = e.data.param.src || '';
         document.getElementById('fit').value = e.data.param.fit || '';
-        document.getElementById('duration').value = e.data.param.duration;
+        document.getElementById('duration').value = e.data.param.duration / 1000 || 5;
         e.source.postMessage({
           method: 'ready',
           id: e.data.id,

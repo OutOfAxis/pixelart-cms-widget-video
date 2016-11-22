@@ -37,12 +37,15 @@
       if(e.data.param.fit === 'center') {
         videoContainer.style.width = '100%';
         videoContainer.style.height = '100%';
+        videoContainer.style.position = 'absolute';
       } else if ( e.data.param.fit === 'fit' ) {
-        videoContainer.style.width = '100%';
-        videoContainer.style.height = 'auto';
+          videoContainer.style.width = '100%';
+          videoContainer.style.height = 'auto';
+          videoContainer.style.position = 'absolute';
       } else if ( e.data.param.fit === 'stretch' ) {
           videoContainer.style.width = 'auto';
           videoContainer.style.height = '100%';
+          videoContainer.style.position = 'absolute';
       } else if ( e.data.param.fit === 'default' ) {
           videoContainer.style.width = 'auto';
           videoContainer.style.height = 'auto';
