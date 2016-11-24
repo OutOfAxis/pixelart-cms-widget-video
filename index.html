@@ -1,5 +1,5 @@
 <div id="video-bg">
-  <video id='video-container' autoplay="true">
+  <video id='video-container' autoplay="true" loop="false">
     Your browser does not support HTML5 video.
   </video>
 </div>
@@ -80,6 +80,7 @@
         id: id,
         param: {
           multiplier: multiplier,
+          duration: duration,
           src: document.getElementById('video-container').src,
         },
         type: 'widget',
