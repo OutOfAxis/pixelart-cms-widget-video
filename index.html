@@ -1,5 +1,5 @@
 <div id="video-bg">
-  <video id='video-container' autoplay="true" loop="true" src="sample.mp4">
+  <video id='video-container' autoplay="true" loop="true">
     Your browser does not support HTML5 video.
   </video>
 </div>
@@ -10,7 +10,7 @@
 
   var multiplier = 2;
   var duration = 0;
-
+  var timeOutId = null;
 
   var videoContainer = document.getElementById('video-container');
   var i = setInterval(function() {
@@ -43,13 +43,14 @@
           id: e.data.id,
           type: 'widget',
         }, e.origin);
-        setTimeout(function() {
+        if(timeOutId !== null) return;
+        timeOutId = setTimeout(function() {
           e.source.postMessage({
             method: 'done',
             id: id,
             type: 'widget',
-
           }, e.origin);
+          timeOutId = null;
           console.log('done');
         }, duration * 1000)
       });
