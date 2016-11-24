@@ -8,6 +8,9 @@
   var id;
   var param = {};
 
+  var duration = 0;
+
+
   var videoContainer = document.getElementById('video-container');
   var i = setInterval(function() {
     if(videoContainer.readyState > 0) {
@@ -15,7 +18,8 @@
       var seconds = videoContainer.duration % 60;
       //f_duration = seconds;
       //document.getElementById('number').value = f_duration;
-      console.log(seconds);
+      duration = seconds;
+      console.log(duration);
       clearInterval(i);
     }
   }, 200);
@@ -30,6 +34,7 @@
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
+      duration = e.data.param.duration;
       var videoContainer = document.getElementById('video-container');
       vid.addEventListener('canplay', function () {
         e.source.postMessage({
@@ -73,6 +78,7 @@
         method: 'setParam',
         id: id,
         param: {
+          duration: duration,
           src: document.getElementById('video-container').src,
         },
         type: 'widget',
