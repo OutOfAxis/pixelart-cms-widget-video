@@ -39,6 +39,7 @@
         document.getElementById('inp').value = e.data.param.src || '';
         document.getElementById('fit').value = e.data.param.fit || '';
         document.getElementById('multiplier').value = e.data.param.multiplier || 1;
+        console.dir(e.data.param.multiplier);
         e.source.postMessage({
           method: 'ready',
           id: e.data.id,
