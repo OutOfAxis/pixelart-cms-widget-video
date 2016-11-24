@@ -8,6 +8,7 @@
   var id;
   var param = {};
 
+  var multiplier = 1;
   var duration = 0;
 
 
@@ -18,7 +19,7 @@
       var seconds = videoContainer.duration % 60;
       //f_duration = seconds;
       //document.getElementById('number').value = f_duration;
-      duration = seconds;
+      duration = seconds * multiplier;
       console.log(duration);
       clearInterval(i);
     }
@@ -34,7 +35,7 @@
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
-      duration = e.data.param.duration;
+      duration = e.data.param.multiplier;
       var videoContainer = document.getElementById('video-container');
       vid.addEventListener('canplay', function () {
         e.source.postMessage({
@@ -78,7 +79,7 @@
         method: 'setParam',
         id: id,
         param: {
-          duration: duration,
+          multiplier: multiplier,
           src: document.getElementById('video-container').src,
         },
         type: 'widget',
