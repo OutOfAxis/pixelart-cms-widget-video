@@ -40,8 +40,6 @@
         document.getElementById('fit').value = e.data.param.fit || '';
         document.getElementById('multiplier').value = e.data.param.multiplier || 1;
         console.dir(e.data.param.multiplier);
-        console.dir(e.data.param.fit);
-        console.dir(e.data.param.src);
         e.source.postMessage({
           method: 'ready',
           id: e.data.id,
@@ -100,7 +98,6 @@
     color: rgb(154, 154, 154);
     font-family: Tahoma;
     display: block;
-    padding-top: 20px;
     padding-bottom: 2px;
     font-size: 12px;
   }

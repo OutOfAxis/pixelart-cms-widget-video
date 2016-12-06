@@ -1,5 +1,5 @@
 <div id="video-bg">
-  <video id='video-container' autoplay="true" loop="true">
+  <video id='video-container' autoplay="true" loop="true" src="sample.mp4">
     Your browser does not support HTML5 video.
   </video>
 </div>
@@ -8,7 +8,7 @@
   var id;
   var param = {};
 
-  var multiplier = 2;
+  var multiplier = 1;
   var duration = 0;
   var timeOutId = null;
 
@@ -20,7 +20,7 @@
       //f_duration = seconds;
       //document.getElementById('number').value = f_duration;
       duration = seconds * multiplier;
-      console.log(duration);
+      //console.log(duration);
       clearInterval(i);
     }
   }, 200);
@@ -43,7 +43,7 @@
           id: e.data.id,
           type: 'widget',
         }, e.origin);
-        if(timeOutId !== null) return;
+        if(timeOutId !== null) clearTimeout(timeOutId);
         timeOutId = setTimeout(function() {
           e.source.postMessage({
             method: 'done',
@@ -51,8 +51,10 @@
             type: 'widget',
           }, e.origin);
           timeOutId = null;
-          console.log('done');
+          console.log('done itss');
+
         }, duration * 1000)
+        console.log("timer "+ timeOutId + "set for " + duration);
       });
 
       vid.addEventListener('ended', function() {
@@ -60,10 +62,9 @@
           method: 'done',
           id: id,
           type: 'widget',
-
         }, e.origin);
       });
-      vid.play();
+      //vid.play();
 
       if(e.data.param.fit === 'center') {
         videoContainer.style.width = 'auto';
