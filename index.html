@@ -3,31 +3,10 @@
     Your browser does not support HTML5 video.
   </video>
 </div>
+
 <script>
 
   var id;
-  var param = {};
-
-  var multiplier = 1;
-  var duration = 0;
-  var timeOutId = null;
-
-  var videoContainer = document.getElementById('video-container');
-  var i = setInterval(function() {
-    if(videoContainer.readyState > 0) {
-      var minutes = parseInt(videoContainer.duration / 60, 10);
-      var seconds = videoContainer.duration % 60;
-      //f_duration = seconds;
-      //document.getElementById('number').value = f_duration;
-      duration = seconds * multiplier;
-      //console.log(duration);
-      clearInterval(i);
-    }
-  }, 200);
-
-
-
-
 
   window.addEventListener('message', function (e) {
     id = e.data.id;
@@ -35,53 +14,40 @@
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('video-container');
       vid.src = e.data.param.src || '';
-      duration = e.data.param.multiplier;
-      var videoContainer = document.getElementById('video-container');
+      var multiplier = e.data.param.multiplier || 1;
+
       vid.addEventListener('canplay', function () {
         e.source.postMessage({
           method: 'ready',
           id: e.data.id,
           type: 'widget',
         }, e.origin);
-        if(timeOutId !== null) clearTimeout(timeOutId);
-        timeOutId = setTimeout(function() {
+        
+        setTimeout(function() {
           e.source.postMessage({
             method: 'done',
             id: id,
             type: 'widget',
           }, e.origin);
-          timeOutId = null;
-          console.log('done itss');
-
-        }, duration * 1000)
-        console.log("timer "+ timeOutId + "set for " + duration);
+        }, multiplier * vid.duration * 1000);
       });
-
-      vid.addEventListener('ended', function() {
-        e.source.postMessage({
-          method: 'done',
-          id: id,
-          type: 'widget',
-        }, e.origin);
-      });
-      //vid.play();
 
       if(e.data.param.fit === 'center') {
-        videoContainer.style.width = 'auto';
-        videoContainer.style.height = 'auto';
-        videoContainer.style.position = 'absolute';
+        vid.style.width = 'auto';
+        vid.style.height = 'auto';
+        vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'fitWidth' ) {
-          videoContainer.style.width = '100%';
-          videoContainer.style.height = 'auto';
-          videoContainer.style.position = 'absolute';
+          vid.style.width = '100%';
+          vid.style.height = 'auto';
+          vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'fitHeight' ) {
-          videoContainer.style.width = 'auto';
-          videoContainer.style.height = '100%';
-          videoContainer.style.position = 'absolute';
+          vid.style.width = 'auto';
+          vid.style.height = '100%';
+          vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'default' ) {
-          videoContainer.style.width = '100%';
-          videoContainer.style.height = '100%';
-          videoContainer.style.position = 'initial';
+          vid.style.width = '100%';
+          vid.style.height = '100%';
+          vid.style.position = 'initial';
         }
 
 
