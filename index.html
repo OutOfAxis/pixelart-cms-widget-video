@@ -22,7 +22,7 @@
           id: e.data.id,
           type: 'widget',
         }, e.origin);
-        
+
         setTimeout(function() {
           e.source.postMessage({
             method: 'done',
@@ -72,6 +72,10 @@
 </script>
 
 <style>
+* {
+  padding: 0;
+  margin: 0;
+}
 #video-bg {
   position: fixed;
   display: flex;
