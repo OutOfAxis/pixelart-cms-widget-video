@@ -7,16 +7,23 @@
 <script>
 
   var id;
+  var multiplier = 1;
+  var videoDuration;
 
   window.addEventListener('message', function (e) {
     id = e.data.id;
 
     if (e.data.method === 'setParam') {
       var vid = document.getElementById('video-container');
-      vid.src = e.data.param.src || '';
-      var multiplier = e.data.param.multiplier || 1;
+      if (vid.src !== e.data.param.src) {
+        vid.src = e.data.param.src || '';
+      }
+      multiplier = e.data.param.multiplier || 1;
 
       vid.addEventListener('canplay', function () {
+        vid.removeEventListener('canplay', arguments.callee);
+        videoDuration = vid.duration;
+
         e.source.postMessage({
           method: 'ready',
           id: e.data.id,
@@ -58,7 +65,7 @@
         id: id,
         param: {
           multiplier: multiplier,
-          duration: duration,
+          duration: videoDuration * multiplier * 1000,
           src: document.getElementById('video-container').src,
         },
         type: 'widget',
