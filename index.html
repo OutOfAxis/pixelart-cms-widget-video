@@ -52,12 +52,19 @@
           vid.style.height = '100%';
           vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'default' ) {
-          vid.style.width = '100%';
-          vid.style.height = '100%';
-          vid.style.position = 'initial';
-        }
+        vid.style.width = '100%';
+        vid.style.height = '100%';
+        vid.style.position = 'initial';
+      }
 
-
+      if (e.data.param.srcId) {
+        e.source.postMessage({
+          method: 'getAsset',
+          assetId: e.data.param.srcId,
+          type: 'widget',
+          id: e.data.id,
+        }, e.origin);
+      }
 
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
@@ -70,7 +77,8 @@
         },
         type: 'widget',
       }, e.origin);
-
+    } else if (e.data.method === 'sendAsset') {
+      vid.src = e.data.asset;
     } else {
       console.log('Unknown event', e);
     }
