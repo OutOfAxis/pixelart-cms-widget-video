@@ -12,9 +12,8 @@
 
   window.addEventListener('message', function (e) {
     id = e.data.id;
-
+    var vid = document.getElementById('video-container');
     if (e.data.method === 'setParam') {
-      var vid = document.getElementById('video-container');
       if (vid.src !== e.data.param.src) {
         vid.src = e.data.param.src || '';
       }
