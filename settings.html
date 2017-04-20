@@ -38,21 +38,42 @@
 
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
-        src = e.data.param.src || '';
-        document.getElementById('fit').value = e.data.param.fit || '';
-        document.getElementById('multiplier').value = e.data.param.multiplier || 1;
+      src = e.data.param.src || '';
+      document.getElementById('fit').value = e.data.param.fit || '';
+      document.getElementById('multiplier').value = e.data.param.multiplier || 1;
+      e.source.postMessage({
+        method: 'ready',
+        id: e.data.id,
+        type: 'settings',
+      }, e.origin);
+      id = e.data.id;
+      if (e.data.param.srcId) {
         e.source.postMessage({
-          method: 'ready',
-          id: e.data.id,
+          method: 'getAsset',
+          assetId: e.data.param.srcId,
           type: 'settings',
+          id: e.data.id,
         }, e.origin);
-        id = e.data.id;
+      }
     } else if (e.data.method === 'getParam') {
+      e.source.postMessage({
+        method: 'setParam',
+        id: id,
+        param: {
+          src: src,
+          systemPreview: src,
+          fit: document.getElementById('fit').value,
+          multiplier: document.getElementById('multiplier').value,
+          duration: duration * document.getElementById('multiplier').value * 1000,
+        },
+        type: 'settings',
+      }, e.origin);
+    } else if (e.data.method === 'sendAsset') {
       var vid = document.createElement('video');
-      vid.src = src;
       vid.addEventListener('canplay', function() {
         vid.removeEventListener('canplay', arguments.callee);
         duration = vid.duration;
+        console.log('duration = ' + duration);
         e.source.postMessage({
           method: 'setParam',
           id: id,
@@ -66,6 +87,8 @@
           type: 'settings',
         }, e.origin);
       });
+      vid.src = e.data.asset;
+//      vid.play();
     } else {
       console.log('Uknown event', e);
     }
