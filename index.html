@@ -41,19 +41,15 @@
       if(e.data.param.fit === 'center') {
         vid.style.width = 'auto';
         vid.style.height = 'auto';
-        vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'fitWidth' ) {
           vid.style.width = '100%';
           vid.style.height = 'auto';
-          vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'fitHeight' ) {
           vid.style.width = 'auto';
           vid.style.height = '100%';
-          vid.style.position = 'absolute';
       } else if ( e.data.param.fit === 'default' ) {
         vid.style.width = '100%';
         vid.style.height = '100%';
-        vid.style.position = 'initial';
       }
 
       if (e.data.param.srcId) {
