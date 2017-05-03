@@ -26,6 +26,7 @@
         // avoid black rectangle
         vid.play();
         vid.pause();
+        vid.className = 'video-playing';
 
         e.source.postMessage({
           method: 'ready',
@@ -71,6 +72,7 @@
     } else if (e.data.method === 'sendAsset') {
       vid.src = e.data.asset;
     } else if (e.data.method === 'play') {
+      vid.className = '';
       vid.play();
       vid.className = 'video-playing';
 
