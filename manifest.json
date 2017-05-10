@@ -1,0 +1,9 @@
+{
+  "thumbnail": "assets/video-tmb.png",
+  "description": "This widget will show your video.",
+  "icon": "youtube-play",
+  "group": "video",
+  "param": {
+    "hasDoneEventSupport": true
+  }
+}
