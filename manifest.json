@@ -4,6 +4,7 @@
   "icon": "youtube-play",
   "group": "video",
   "param": {
+    "internal": true,
     "hasDoneEventSupport": true
   }
 }
