@@ -19,6 +19,10 @@
       }
       multiplier = e.data.param.multiplier || 1;
 
+      if (e.data.isInfinite) {
+        vid.loop = true;
+      } 
+
       vid.addEventListener('canplay', function () {
         vid.removeEventListener('canplay', arguments.callee);
         videoDuration = vid.duration;
