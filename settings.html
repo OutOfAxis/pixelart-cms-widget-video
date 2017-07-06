@@ -7,7 +7,7 @@
   </div>
   <div>
     <div class='caption'>
-      Fit:
+      Alignment:
     </div>
     <div class='inp'>
       <select id='fit'>
@@ -39,7 +39,7 @@
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
       src = e.data.param.src || '';
-      document.getElementById('fit').value = e.data.param.fit || '';
+      document.getElementById('fit').value = e.data.param.fit || 'default';
       document.getElementById('multiplier').value = e.data.param.multiplier || 1;
       e.source.postMessage({
         method: 'ready',
