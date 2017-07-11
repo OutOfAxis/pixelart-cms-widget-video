@@ -1,7 +1,7 @@
 {
   "thumbnail": "assets/video-tmb.png",
   "description": "This widget will show your video.",
-  "icon": "youtube-play",
+  "icon": "play-circle",
   "group": "video",
   "param": {
     "internal": true,

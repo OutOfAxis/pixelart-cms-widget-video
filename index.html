@@ -39,13 +39,14 @@
         }, e.origin);
       });
 
-      if ( e.data.param.fit === 'default' ) {
+      var fit = e.data.param.fit;
+      if (!fit || fit === 'default') {
         vid.style.width = '100%';
         vid.style.height = '100%';
-      } else if ( e.data.param.fit === 'fitw' ) {
+      } else if ( fit === 'fitw' ) {
         vid.style.width = '100%';
         vid.style.height = 'auto';
-      } else if ( e.data.param.fit === 'fith' ) {
+      } else if ( fit === 'fith' ) {
         vid.style.width = 'auto';
         vid.style.height = '100%';
       }
