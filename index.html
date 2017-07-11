@@ -21,7 +21,7 @@
 
       if (e.data.isInfinite) {
         vid.loop = true;
-      } 
+      }
 
       vid.addEventListener('canplay', function () {
         vid.removeEventListener('canplay', arguments.callee);
@@ -39,17 +39,14 @@
         }, e.origin);
       });
 
-      if(e.data.param.fit === 'center') {
-        vid.style.width = 'auto';
-        vid.style.height = 'auto';
-      } else if ( e.data.param.fit === 'fitWidth' ) {
-          vid.style.width = '100%';
-          vid.style.height = 'auto';
-      } else if ( e.data.param.fit === 'fitHeight' ) {
-          vid.style.width = 'auto';
-          vid.style.height = '100%';
-      } else if ( e.data.param.fit === 'default' ) {
+      if ( e.data.param.fit === 'default' ) {
         vid.style.width = '100%';
+        vid.style.height = '100%';
+      } else if ( e.data.param.fit === 'fitw' ) {
+        vid.style.width = '100%';
+        vid.style.height = 'auto';
+      } else if ( e.data.param.fit === 'fith' ) {
+        vid.style.width = 'auto';
         vid.style.height = '100%';
       }
 
