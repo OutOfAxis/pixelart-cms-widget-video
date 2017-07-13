@@ -6,12 +6,6 @@
     <input id='inp' autofocus />
   </div>
 
-  <div class="rules">
-    <img src="info.svg" alt="" width="20px">
-    <p>Change settings and click apply or save</p>
-    <div class="divider"></div>
-  </div>
-
   <div class="title">
     <p>Video Alignment</p>
     <img src="down-arrow.svg" alt="" width="8px">
@@ -57,6 +51,7 @@
   var param = {};
   var fit = '';
   var buttons;
+  var origin;
 
   function refreshFit() {
     for (var i = 0; i < buttons.length; i++) {
@@ -72,16 +67,31 @@
     buttons = document.getElementsByTagName('button');
     fit = fit ? fit : 'fittoscreen';
 
+    var multiplier = document.getElementById('multiplier');
+    multiplier.addEventListener('input', function(e) {
+      parent.postMessage({
+        method: 'changed',
+        type: 'settings',
+        id: id,
+      }, origin);
+    });
+
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].addEventListener('click', function() {
         fit = this.getAttribute('data-fit');
         refreshFit();
+        parent.postMessage({
+          method: 'changed',
+          type: 'settings',
+          id: id,
+        }, origin);
       });
     }
     refreshFit();
   });
 
   window.addEventListener('message', function (e) {
+    origin = e.origin;
     if (e.data.method === 'setParam') {
       src = e.data.param.src || '';
       fit = e.data.param.fit || 'fittoscreen';
@@ -90,7 +100,7 @@
         method: 'ready',
         id: e.data.id,
         type: 'settings',
-      }, e.origin);
+      }, origin);
       id = e.data.id;
       if (e.data.param.srcId) {
         e.source.postMessage({
@@ -98,7 +108,7 @@
           assetId: e.data.param.srcId,
           type: 'settings',
           id: e.data.id,
-        }, e.origin);
+        }, origin);
       }
       refreshFit();
     } else if (e.data.method === 'getParam') {
@@ -113,7 +123,7 @@
           duration: duration * document.getElementById('multiplier').value * 1000,
         },
         type: 'settings',
-      }, e.origin);
+      }, origin);
     } else if (e.data.method === 'sendAsset') {
       var vid = document.createElement('video');
       vid.addEventListener('canplay', function() {
@@ -131,7 +141,7 @@
             duration: vid.duration * document.getElementById('multiplier').value * 1000,
           },
           type: 'settings',
-        }, e.origin);
+        }, origin);
       });
       vid.src = e.data.asset;
 //      vid.play();
@@ -155,7 +165,7 @@
               duration: duration * document.getElementById('multiplier').value * 1000,
             },
             type: 'settings',
-          }, e.origin);
+          }, origin);
         }
       });
 
