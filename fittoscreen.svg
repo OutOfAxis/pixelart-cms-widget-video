@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2012.419 120 40.61 40.61">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Group_18" data-name="Group 18" transform="translate(1990)">
+    <g id="Group_15" data-name="Group 15" transform="translate(22.419 120)">
+      <path id="play-button" class="cls-1" d="M3.769,3.517.193.031A.094.094,0,0,0,.066.02.193.193,0,0,0,0,.174V7.146A.193.193,0,0,0,.066,7.3a.1.1,0,0,0,.057.02.1.1,0,0,0,.07-.031L3.769,3.8a.22.22,0,0,0,0-.287Z" transform="translate(16.558 32.959) rotate(-90)"/>
+      <path id="play-button-2" data-name="play-button" class="cls-1" d="M3.769,3.517.193.031A.094.094,0,0,0,.066.02.193.193,0,0,0,0,.174V7.146A.193.193,0,0,0,.066,7.3a.1.1,0,0,0,.057.02.1.1,0,0,0,.07-.031L3.769,3.8a.22.22,0,0,0,0-.287Z" transform="translate(23.878 7.698) rotate(90)"/>
+      <g id="Group_8" data-name="Group 8" transform="translate(0 4.212)">
+        <rect id="Rectangle_8" data-name="Rectangle 8" class="cls-1" width="2.44" height="32.186" rx="1.22" transform="translate(38.17)"/>
+        <rect id="Rectangle_9" data-name="Rectangle 9" class="cls-1" width="2.44" height="32.186" rx="1.22" transform="translate(0)"/>
+      </g>
+      <g id="Group_9" data-name="Group 9" transform="translate(4.212 40.61) rotate(-90)">
+        <rect id="Rectangle_8-2" data-name="Rectangle 8" class="cls-1" width="2.44" height="32.186" rx="1.22" transform="translate(38.17)"/>
+        <rect id="Rectangle_9-2" data-name="Rectangle 9" class="cls-1" width="2.44" height="32.186" rx="1.22"/>
+      </g>
+      <path id="play-button-3" data-name="play-button" class="cls-1" d="M9.269,3.517,5.693.031A.094.094,0,0,0,5.566.02.193.193,0,0,0,5.5.174V7.146a.193.193,0,0,0,.066.154.1.1,0,0,0,.057.02.1.1,0,0,0,.07-.031L9.269,3.8a.22.22,0,0,0,0-.287Z" transform="translate(2.088 16.668)"/>
+      <path id="play-button-4" data-name="play-button" class="cls-1" d="M3.769,3.517.193.031A.094.094,0,0,0,.066.02.193.193,0,0,0,0,.174V7.146A.193.193,0,0,0,.066,7.3a.1.1,0,0,0,.057.02.1.1,0,0,0,.07-.031L3.769,3.8a.22.22,0,0,0,0-.287Z" transform="translate(32.848 23.989) rotate(180)"/>
+    </g>
+    <rect id="Rectangle_13" data-name="Rectangle 13" class="cls-1" width="13" height="13" rx="1" transform="translate(36 134)"/>
+  </g>
+</svg>

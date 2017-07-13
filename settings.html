@@ -5,24 +5,45 @@
   <div class='inp hidden'>
     <input id='inp' autofocus />
   </div>
-  <div>
-    <div class='caption'>
-      Alignment:
-    </div>
-    <div class='inp'>
-      <select id='fit'>
-        <option value='default' selected>Default size</option>
-        <option value='fitw'>Fit width</option>
-        <option value='fith'>Fit height</option>
-      </select>
-    </div>
+
+  <div class="rules">
+    <img src="info.svg" alt="" width="20px">
+    <p>Change settings and click apply or save</p>
+    <div class="divider"></div>
   </div>
-  <div>
-    <div class='caption'>
-      How Many Times Plays:
-    </div>
-    <div class='inp'>
-      <input type='number' id='multiplier' min="1"/>
+
+  <div class="title">
+    <p>Video Alignment</p>
+    <img src="down-arrow.svg" alt="" width="8px">
+  </div>
+
+
+  <div class="button-block" style="visibility:hidden">
+    <button class="button" data-fit="fittoscreen">
+      <img src="fittoscreen.svg" class="size-img">
+      <span class="text">Fit to screen</span>
+    </button>
+    <button class="button" data-fit="original">
+      <img src="original.svg" class="size-img">
+      <span class="text">Original Size</span>
+    </button>
+    <button class="button" data-fit="fitw">
+      <img src="fit-width.svg" class="size-img">
+      <span class="text">Fit width</span>
+    </button>
+    <button class="button" data-fit="fith">
+      <img src="fit-height.svg" class="size-img">
+      <span class="text">Fit height</span>
+    </button>
+  </div>
+
+  <div class="title">
+    <p>How Many Times Plays</p>
+    <img src="down-arrow.svg" alt="" width="8px">
+  </div>
+  <div class="duration">
+    <div class="input-block">
+      <input type="number" class="my-input" id='multiplier' min="1" value="1">
     </div>
   </div>
 
@@ -34,11 +55,36 @@
   var src;
   var duration;
   var param = {};
+  var fit = '';
+  var buttons;
+
+  function refreshFit() {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].removeAttribute("disabled");
+      if (buttons[i].getAttribute('data-fit') === fit) {
+        buttons[i].setAttribute("disabled", "disabled");
+      }
+    }
+  }
+
+  window.addEventListener('load', function() {
+    setTimeout(function() {document.getElementsByClassName('button-block')[0].style.visibility='visible'}, 200);
+    buttons = document.getElementsByTagName('button');
+    fit = fit ? fit : 'fittoscreen';
+
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener('click', function() {
+        fit = this.getAttribute('data-fit');
+        refreshFit();
+      });
+    }
+    refreshFit();
+  });
 
   window.addEventListener('message', function (e) {
     if (e.data.method === 'setParam') {
       src = e.data.param.src || '';
-      document.getElementById('fit').value = e.data.param.fit || 'default';
+      fit = e.data.param.fit || 'fittoscreen';
       document.getElementById('multiplier').value = e.data.param.multiplier || 1;
       e.source.postMessage({
         method: 'ready',
@@ -54,6 +100,7 @@
           id: e.data.id,
         }, e.origin);
       }
+      refreshFit();
     } else if (e.data.method === 'getParam') {
       e.source.postMessage({
         method: 'setParam',
@@ -61,7 +108,7 @@
         param: {
           src: src,
           systemPreview: src,
-          fit: document.getElementById('fit').value,
+          fit: fit,
           multiplier: document.getElementById('multiplier').value,
           duration: duration * document.getElementById('multiplier').value * 1000,
         },
@@ -79,7 +126,7 @@
           param: {
             src: src,
             systemPreview: src,
-            fit: document.getElementById('fit').value,
+            fit: fit,
             multiplier: document.getElementById('multiplier').value,
             duration: vid.duration * document.getElementById('multiplier').value * 1000,
           },
@@ -103,7 +150,7 @@
             param: {
               src: src,
               systemPreview: src,
-              fit: document.getElementById('fit').value,
+              fit: fit,
               multiplier: document.getElementById('multiplier').value,
               duration: duration * document.getElementById('multiplier').value * 1000,
             },
@@ -125,6 +172,8 @@
   .wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    width: 290px;
   }
   .caption {
     font-weight: normal;
@@ -133,7 +182,11 @@
     margin: 5px 0px;
   }
 
-  #inp, #multiplier {
+  .hidden {
+    display: none;
+  }
+
+  #inp, #duration {
     outline: none !important;
     border-radius: 0px;
     background: rgba(234, 236, 238, 0.631373);
@@ -147,11 +200,7 @@
     border: 1px solid rgb(236, 236, 236);
   }
 
-  .hidden {
-    display: none;
-  }
-
-  #inp:focus, #multiplier:focus {
+   #duration:focus, #inp:focus {
     box-shadow: rgb(155, 188, 171) 0px 2px 0px;
   }
 
@@ -159,8 +208,8 @@
     display: block;
     -webkit-appearance: button;
     background: url(select-arrow.png) #F4F4F4;
-    background-size: 8px 8px;
     margin-bottom: 15px;
+    background-size: 8px 8px;
     background-position: 97% center;
     background-repeat: no-repeat;
     border-radius: 0px;
@@ -178,4 +227,111 @@
   select:focus {
     outline: 1px solid rgba(126, 222, 174, 0.3);
   }
+
+  .divider {
+    width: 100%;
+    height: 2px;
+    background: rgba(29, 120, 139, 0.39);
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  .rules {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    align-items: center;
+    color: rgba(29, 120, 139, 0.39);
+    text-align: center;
+    max-width: 50%;
+    width: 100%;
+    margin: auto;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(51, 55, 70);
+    text-transform: uppercase;
+    /* border-bottom: 2px solid rgb(230, 75, 96); */
+    margin: 10px;
+  }
+
+/* button */
+  .button-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    margin: 5px 12px;
+    padding: 8px;
+    background: #1d788b;
+    justify-content: space-around;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+    outline: none;
+    transition: all 0.2s linear;
+  }
+  .button img {
+    width: 26px;
+    padding: 4px;
+  }
+  .button .text {
+    color: #fff;
+    font-size: 12px;
+  }
+  .button:hover {
+    background: #3e96a8;
+  }
+  .button:disabled {
+    cursor:auto;
+    background: rgba(179, 179, 179, 0.53);
+    box-shadow:  inset 0px 0px 10px 1px rgba(179, 179, 179, 0.17);
+  }
+
+  .btn-active: {
+    box-shadow:  inset 0px 0px 13px 4px rgba(0, 0, 0, 0.25);
+  }
+  .duration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .input-block {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .input-block span {
+    font-size: 14px;
+  }
+
+  .duration .my-input {
+    width: 100%;
+    height: 40px;
+    font-size: 22px;
+    outline: none;
+    text-align: center;
+    border: 1px solid #efefef;
+    background: #f4f4f4;
+    border-radius: 2px;
+    color: #1d788b;
+    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.22);
+    transition: all .2s linear;
+  }
+  .duration .my-input:focus, .duration:focus {
+   box-shadow: #1d788b 0px 2px 0px;
+ }
 </style>

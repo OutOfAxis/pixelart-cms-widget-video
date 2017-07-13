@@ -40,9 +40,12 @@
       });
 
       var fit = e.data.param.fit;
-      if (!fit || fit === 'default') {
+      if (!fit || fit === 'fittoscreen') {
         vid.style.width = '100%';
         vid.style.height = '100%';
+      } else if ( fit === 'original') {
+        vid.style.width = 'auto';
+        vid.style.height = 'auto';
       } else if ( fit === 'fitw' ) {
         vid.style.width = '100%';
         vid.style.height = 'auto';
