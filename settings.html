@@ -1,153 +1,166 @@
 <style>
-  * {
-    padding: 0;
-    margin: 0;
-    font-family: Tahoma;
-  }
 
-  body {
-    overflow: hidden;
-    width: 100%;
-  }
+/*====== GLOBAL STYLES START ======*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Tahoma;
+}
 
-  #loader {
-    position: fixed;
-    display: block;
-    opacity: 1;
-    left: 0px;
-    top: 0px;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url('spinner.svg') no-repeat #fff;
-    background-size: 50px 50px;
-    background-position: center;
-    transition: all .2s linear;
-  }
+body {
+  overflow: hidden;
+  width: 100%;
+}
+#loader {
+  position: fixed;
+  display: block;
+  opacity: 1;
+  left: 0px;
+  top: 0px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url('spinner.svg') no-repeat #fff;
+  background-size: 50px 50px;
+  background-position: center;
+  transition: all .2s linear;
+}
 
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 290px;
-  }
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 290px;
+}
 
-  .caption {
-    font-weight: normal;
-    font-size: 13px;
-    color: rgb(93, 100, 129);
-    margin: 5px 0px;
-  }
+.hidden {
+  display: none;
+}
 
-  .hidden {
-    display: none;
-  }
+.title {
+  text-align: center;
+  font-size: 14px;
+  color: rgb(51, 55, 70);
+  text-transform: uppercase;
+  margin: 10px;
+}
+/*====== GLOBAL STYLES END ======*/
 
-  .divider {
-    width: 100%;
-    height: 2px;
-    background: rgba(29, 120, 139, 0.39);
-    border-radius: 10px;
-    margin: 10px auto;
-  }
 
-  .title {
-    text-align: center;
-    font-size: 14px;
-    color: rgb(51, 55, 70);
-    text-transform: uppercase;
-    /* border-bottom: 2px solid rgb(230, 75, 96); */
-    margin: 10px;
-  }
-  /* buttons */
+/*====== BUTTON STYLES START ======*/
+.button-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
 
-  .button-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-  }
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 115px;
+  margin: 5px 15px;
+  padding: 14px 8px;
+  background-color: #1d788b;
+  justify-content: flex-end;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
+  outline: none;
+  transition: all 0.2s linear;
+}
 
-  .button {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 120px;
-    margin: 5px 12px;
-    padding: 3px 7px;
-    background: #1d788b;
-    justify-content: flex-start;
-    border-radius: 2px;
-    border: none;
-    cursor: pointer;
-    text-transform: uppercase;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
-    outline: none;
-    transition: all 0.2s linear;
-  }
 
-  .button img {
-    width: 26px;
-    padding: 4px;
-  }
+.button[data-fit="fittoscreen"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 45px 200px;
+  background-position: -1px 6px;
+}
+.button[data-fit="fillscreen"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 45px 200px;
+  background-position: -1px -28px;
+}
+.button[data-fit="fitw"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 45px 200px;
+  background-position: -1px -63px;
+}
+.button[data-fit="fith"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 45px 200px;
+  background-position: -1px -97px;
+}
+.button[data-fit="original"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 45px 200px;
+  background-position: -1px -132px;
+}
+.button[data-fit="tile"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 45px 200px;
+  background-position: -1px -167px;
+}
 
-  .button .text {
-    color: #fff;
-    font-size: 10px;
-  }
+.button .text {
+  color: #fff;
+  font-size: 10px;
+}
 
-  .button:hover {
-    background: #3e96a8;
-  }
+.button:hover {
+  background-color: #3e96a8;
+}
 
-  .button:disabled {
-    cursor: auto;
-    background: rgba(179, 179, 179, 0.53);
-    box-shadow: inset 0px 0px 10px 1px rgba(179, 179, 179, 0.17);
-  }
+.button:disabled {
+  cursor: not-allowed;
+  background-color: rgba(179, 179, 179, 0.53);
+  box-shadow: inset 0px 0px 10px 1px rgba(179, 179, 179, 0.17);
+}
+/*====== BUTTON STYLES END ======*/
 
-  .btn-active: {
-    box-shadow: inset 0px 0px 13px 4px rgba(0, 0, 0, 0.25);
-  }
 
-  .multiplier {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+/*====== DURATION STYLES START ======*/
+.multiplier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .input-block {
-    display: flex;
-    align-items: flex-end;
-  }
+.multiplier #multiplier {
+  width: 100%;
+  max-width: 90%;
+  height: 40px;
+  font-size: 22px;
+  outline: none;
+  text-align: center;
+  border: 1px solid #efefef;
+  background: #f4f4f4;
+  border-radius: 2px;
+  color: #1d788b;
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.22);
+  transition: all .2s linear;
+}
 
-  .input-block span {
-    font-size: 14px;
-  }
+.multiplier #multiplier:focus {
+  box-shadow: #1d788b 0px 2px 0px;
+}
+/*====== DURATION STYLES END ======*/
 
-  .multiplier .my-input {
-    width: 100%;
-    height: 40px;
-    font-size: 22px;
-    outline: none;
-    text-align: center;
-    border: 1px solid #efefef;
-    background: #f4f4f4;
-    border-radius: 2px;
-    color: #1d788b;
-    box-shadow: 0 0px 1px rgba(0, 0, 0, 0.22);
-    transition: all .2s linear;
-  }
 
-  .multiplier .my-input:focus,
-  .duration:focus {
-    box-shadow: #1d788b 0px 2px 0px;
-  }
 </style>
 <div id="loader"></div>
 <div class="wrapper">
@@ -159,31 +172,24 @@
   </div>
   <div class="button-block" style="visibility:hidden">
     <button class="button" data-fit="fittoscreen">
-      <img src="fittoscreen.svg" class="size-img">
       <span class="text">Fit to screen</span>
     </button>
     <button class="button" data-fit="original">
-      <img src="original.svg" class="size-img">
       <span class="text">Original Size</span>
     </button>
     <button class="button" data-fit="fitw">
-      <img src="fit-width.svg" class="size-img">
       <span class="text">Fit width</span>
     </button>
     <button class="button" data-fit="fith">
-      <img src="fit-height.svg" class="size-img">
       <span class="text">Fit height</span>
     </button>
   </div>
 
   <div class="title">
     <p>How Many Times Plays</p>
-    <img src="down-arrow.svg" alt="" width="8px">
   </div>
   <div class="multiplier">
-    <div class="input-block">
-      <input type="number" class="my-input" id='multiplier' min="1" value="1">
-    </div>
+    <input type="number" class="my-input" id='multiplier' min="1" value="1">
   </div>
 
 </div>
