@@ -42,8 +42,8 @@ body {
 .title {
   text-align: center;
   font-size: 14px;
-  color: rgb(51, 55, 70);
-  text-transform: uppercase;
+  color: #5c5f6b;
+  text-transform: capitalize;
   margin: 10px;
 }
 /*====== GLOBAL STYLES END ======*/
@@ -53,28 +53,41 @@ body {
 .button-block {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
 }
 
+.video-size {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
 .button {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 115px;
-  margin: 5px 15px;
-  padding: 14px 8px;
-  background-color: #1d788b;
-  justify-content: flex-end;
-  border-radius: 2px;
+  width: 90px;
+  height: 40px;
+  padding: 3px;
+  margin: 2px 15px;
+  font-size: 14px;
+  color: #1d788b;
+  background-color: #fff;
+  border-radius: 4px;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   outline: none;
-  transition: all 0.2s linear;
+  box-sizing: border-box;
+  box-shadow: 1px solid rgba(204, 204, 204, 0.2);
+  transition: all 0.2s ease-in-out;
 }
 
 
@@ -82,53 +95,48 @@ body {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
   background-size: 45px 200px;
-  background-position: -1px 6px;
+  background-position: center -28px;
 }
-.button[data-fit="fillscreen"] {
-  background-image: url(sprite.svg);
-  background-repeat:  no-repeat;
-  background-size: 45px 200px;
-  background-position: -1px -28px;
-}
+
 .button[data-fit="fitw"] {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
   background-size: 45px 200px;
-  background-position: -1px -63px;
+  background-position: center -63px;
 }
 .button[data-fit="fith"] {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
   background-size: 45px 200px;
-  background-position: -1px -97px;
+  background-position: center -97px;
 }
 .button[data-fit="original"] {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
   background-size: 45px 200px;
-  background-position: -1px -132px;
-}
-.button[data-fit="tile"] {
-  background-image: url(sprite.svg);
-  background-repeat:  no-repeat;
-  background-size: 45px 200px;
-  background-position: -1px -167px;
-}
-
-.button .text {
-  color: #fff;
-  font-size: 10px;
+  background-position: center -132px;
 }
 
 .button:hover {
-  background-color: #3e96a8;
+  background-color: #f5f5f5;
 }
 
 .button:disabled {
   cursor: not-allowed;
-  background-color: rgba(179, 179, 179, 0.53);
-  box-shadow: inset 0px 0px 10px 1px rgba(179, 179, 179, 0.17);
+  background-color: #fff;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15) inset, 0 0 6px rgba(0,0,0,.2) inset;
+  opacity: .6;
 }
+
+.text {
+  color: #5c5f6b;
+  font-size: 12px;
+  font-weight: normal;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+
 /*====== BUTTON STYLES END ======*/
 
 
@@ -171,19 +179,24 @@ body {
     <input id='inp' autofocus />
   </div>
   <div class="button-block" style="visibility:hidden">
-    <button class="button" data-fit="fittoscreen">
+    <div class="video-size">
+      <button class="button btn-size" data-fit="fittoscreen"></button>
       <span class="text">Fit to screen</span>
-    </button>
-    <button class="button" data-fit="original">
+    </div>
+    <div class="video-size">
+      <button class="button btn-size" data-fit="original"></button>
       <span class="text">Original Size</span>
-    </button>
-    <button class="button" data-fit="fitw">
+    </div>
+    <div class="video-size">
+      <button class="button btn-size" data-fit="fitw"></button>
       <span class="text">Fit width</span>
-    </button>
-    <button class="button" data-fit="fith">
+    </div>
+    <div class="video-size ">
+      <button class="button btn-size" data-fit="fith"></button>
       <span class="text">Fit height</span>
-    </button>
+    </div>
   </div>
+
 
   <div class="title">
     <p>How Many Times Plays</p>
@@ -191,7 +204,6 @@ body {
   <div class="multiplier">
     <input type="number" class="my-input" id='multiplier' min="1" value="1">
   </div>
-
 </div>
 
 <script>
@@ -225,7 +237,7 @@ body {
     setTimeout(function() {
       document.getElementsByClassName('button-block')[0].style.visibility = 'visible'
     }, 200);
-    buttons = document.getElementsByTagName('button');
+    buttons = document.getElementsByClassName('btn-size');
     fit = fit ? fit : 'fittoscreen';
 
     var multiplier = document.getElementById('multiplier');

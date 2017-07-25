@@ -1,5 +1,5 @@
 <div id="video-bg">
-  <video id='video-container' src="">
+  <video id='video-container' src="" poster="transparent.png" muted>
     Your browser does not support HTML5 video.
   </video>
 </div>
@@ -54,6 +54,7 @@
         vid.style.height = '100%';
       }
 
+
       if (e.data.param.srcId) {
         e.source.postMessage({
           method: 'getAsset',
@@ -103,6 +104,9 @@
 video {
   height: 0;
   width: 0;
+  background: transparent url('spinner.svg') no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
 }
 #video-bg {
   position: fixed;
