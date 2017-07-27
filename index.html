@@ -1,3 +1,50 @@
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  
+}
+video {
+  height: 0;
+  width: 0;
+  background: transparent url('spinner.svg') no-repeat;
+  background-size: 40px 40px;
+  background-position: center;
+}
+#video-bg {
+  position: fixed;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.video-playing {
+  width: 100%;
+  height: 100%;
+}
+#number, button {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+
+}
+</style>
+
 <div id="video-bg">
   <video id='video-container' src="" poster="transparent.png" muted>
     Your browser does not support HTML5 video.
@@ -95,47 +142,3 @@
   }, false);
 
 </script>
-
-<style>
-* {
-  padding: 0;
-  margin: 0;
-}
-video {
-  height: 0;
-  width: 0;
-  background: transparent url('spinner.svg') no-repeat;
-  background-size: 40px 40px;
-  background-position: center;
-}
-#video-bg {
-  position: fixed;
-  display: flex;
-  align-content: center;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.video-playing {
-  width: 100%;
-  height: 100%;
-}
-#number, button {
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  bottom: 0;
-  z-index: 2;
-
-}
-</style>

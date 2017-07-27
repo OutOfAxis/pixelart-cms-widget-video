@@ -28,3 +28,5 @@ fabric.properties
 
 .DS_Store
 
+*.zip
+__MACOSX
