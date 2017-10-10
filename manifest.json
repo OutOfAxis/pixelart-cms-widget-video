@@ -3,6 +3,7 @@
   "description": "This widget will show your video.",
   "icon": "play-circle",
   "group": "video",
+  "internetRequired": false,
   "param": {
     "internal": true,
     "hasDoneEventSupport": true
