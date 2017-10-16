@@ -209,7 +209,6 @@ body {
 <script>
   var id;
   var src;
-  var duration;
   var param = {};
   var fit = '';
   var buttons;
@@ -293,7 +292,6 @@ body {
           systemPreview: src,
           fit: fit,
           multiplier: document.getElementById('multiplier').value,
-          duration: duration * document.getElementById('multiplier').value * 1000,
         },
         type: 'settings',
       }, origin);
@@ -301,8 +299,6 @@ body {
       var vid = document.createElement('video');
       vid.addEventListener('canplay', function() {
         vid.removeEventListener('canplay', arguments.callee);
-        duration = vid.duration;
-        console.log('duration = ' + duration);
         e.source.postMessage({
           method: 'setParam',
           id: id,
@@ -311,7 +307,6 @@ body {
             systemPreview: src,
             fit: fit,
             multiplier: document.getElementById('multiplier').value,
-            duration: vid.duration * document.getElementById('multiplier').value * 1000,
           },
           type: 'settings',
         }, origin);
@@ -335,7 +330,6 @@ body {
               systemPreview: src,
               fit: fit,
               multiplier: document.getElementById('multiplier').value,
-              duration: duration * document.getElementById('multiplier').value * 1000,
             },
             type: 'settings',
           }, origin);
