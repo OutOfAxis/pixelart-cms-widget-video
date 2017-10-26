@@ -55,6 +55,8 @@ video {
 
   var id;
   var multiplier = 1;
+  var playCount = 0;
+  var isInfinite = false;
 
   window.addEventListener('message', function (e) {
     id = e.data.id;
@@ -63,9 +65,11 @@ video {
       if (vid.src !== e.data.param.src) {
         vid.src = e.data.param.src || '';
       }
-      multiplier = e.data.param.multiplier || 1;
 
-      if (e.data.isInfinite) {
+      multiplier = e.data.param.multiplier || 1;
+      isInfinite = e.data.isInfinite;
+
+      if (isInfinite) {
         vid.loop = true;
       }
 
@@ -127,6 +131,12 @@ video {
       vid.className = 'video-playing';
 
       vid.addEventListener('ended', function () {
+        playCount++;
+        if (playCount < multiplier) {
+          vid.play();
+          return;
+        }
+
         e.source.postMessage({
           method: 'done',
           id: id,
