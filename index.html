@@ -57,6 +57,7 @@ video {
   var multiplier = 1;
   var playCount = 0;
   var isInfinite = false;
+  var videoDuration = 0;
 
   window.addEventListener('message', function (e) {
     id = e.data.id;
@@ -68,6 +69,7 @@ video {
 
       multiplier = e.data.param.multiplier || 1;
       isInfinite = e.data.isInfinite;
+      videoDuration = e.data.param.videoDuration;
 
       if (isInfinite) {
         vid.loop = true;
@@ -114,13 +116,17 @@ video {
       }
 
     } else if (e.data.method === 'getParam') {
+      var param = {
+        multiplier: multiplier,
+        src: document.getElementById('video-container').src,
+      };
+      if (videoDuration) {
+        param.duration = videoDuration * multiplier;
+      }
       e.source.postMessage({
         method: 'setParam',
         id: id,
-        param: {
-          multiplier: multiplier,
-          src: document.getElementById('video-container').src,
-        },
+        param: param,
         type: 'widget',
       }, e.origin);
     } else if (e.data.method === 'sendAsset') {

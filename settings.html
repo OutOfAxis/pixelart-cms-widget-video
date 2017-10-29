@@ -213,6 +213,7 @@ body {
   var fit = '';
   var buttons;
   var origin;
+  var videoDuration = 0;
 
   function refreshFit() {
     for (var i = 0; i < buttons.length; i++) {
@@ -267,6 +268,7 @@ body {
     if (e.data.method === 'setParam') {
       src = e.data.param.src || '';
       fit = e.data.param.fit || 'fittoscreen';
+      videoDuration = e.data.param.videoDuration;
       document.getElementById('multiplier').value = e.data.param.multiplier || 1;
       e.source.postMessage({
         method: 'ready',
@@ -284,35 +286,22 @@ body {
       }
       refreshFit();
     } else if (e.data.method === 'getParam') {
+      var multiplier = document.getElementById('multiplier').value;
+      var param = {
+        src: src,
+        systemPreview: src,
+        fit: fit,
+        multiplier: multiplier,
+      };
+      if (videoDuration) {
+        param.duration = videoDuration * ~~multiplier;
+      }
       e.source.postMessage({
         method: 'setParam',
         id: id,
-        param: {
-          src: src,
-          systemPreview: src,
-          fit: fit,
-          multiplier: document.getElementById('multiplier').value,
-        },
+        param: param,
         type: 'settings',
       }, origin);
-    } else if (e.data.method === 'sendAsset') {
-      var vid = document.createElement('video');
-      vid.addEventListener('canplay', function() {
-        vid.removeEventListener('canplay', arguments.callee);
-        e.source.postMessage({
-          method: 'setParam',
-          id: id,
-          param: {
-            src: src,
-            systemPreview: src,
-            fit: fit,
-            multiplier: document.getElementById('multiplier').value,
-          },
-          type: 'settings',
-        }, origin);
-      });
-      vid.src = e.data.asset;
-      //      vid.play();
     } else {
       console.log('Uknown event', e);
     }
