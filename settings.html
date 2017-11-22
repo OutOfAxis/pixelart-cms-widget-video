@@ -72,21 +72,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   padding: 3px;
-  margin: 2px 15px;
+  margin: 2px 25px;
   font-size: 14px;
   color: #1d788b;
   background-color: #fff;
-  border-radius: 4px;
+  border-radius: 50%;
   border: none;
   cursor: pointer;
   text-transform: uppercase;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.22);
   outline: none;
   box-sizing: border-box;
-  box-shadow: 1px solid rgba(204, 204, 204, 0.2);
   transition: all 0.2s ease-in-out;
 }
 
@@ -94,28 +93,30 @@ body {
 .button[data-fit="fittoscreen"] {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
-  background-size: 45px 200px;
-  background-position: center -28px;
+  background-size: 40px 360px;
+  background-position: center 12px;
+}
+
+.button[data-fit="original"] {
+  background-image: url(sprite.svg);
+  background-repeat:  no-repeat;
+  background-size: 40px 360px;
+  background-position: center -253px;
 }
 
 .button[data-fit="fitw"] {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
-  background-size: 45px 200px;
-  background-position: center -63px;
+  background-size: 40px 360px;
+  background-position: center -120px;
 }
 .button[data-fit="fith"] {
   background-image: url(sprite.svg);
   background-repeat:  no-repeat;
-  background-size: 45px 200px;
-  background-position: center -97px;
+  background-size: 40px 360px;
+  background-position: center -185px;
 }
-.button[data-fit="original"] {
-  background-image: url(sprite.svg);
-  background-repeat:  no-repeat;
-  background-size: 45px 200px;
-  background-position: center -132px;
-}
+
 
 .button:hover {
   background-color: #f5f5f5;

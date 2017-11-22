@@ -1,96 +1,136 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="2012 55 40 295">
-  <defs>
-    <style>
-      .cls-1 {
-        fill: #1d788b;
-      }
-    </style>
-  </defs>
-  <g id="Group_23" data-name="Group 23" transform="translate(1990)">
-    <g id="Group_18" data-name="Group 18" transform="translate(-0.419 -14)">
-      <g id="Group_15" data-name="Group 15" transform="translate(22.419 120)">
-        <path id="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(16.309 32.463) rotate(-90)"/>
-        <path id="play-button-2" data-name="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(23.519 7.583) rotate(90)"/>
-        <g id="Group_8" data-name="Group 8" transform="translate(0 4.149)">
-          <rect id="Rectangle_8" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-          <rect id="Rectangle_9" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(0)"/>
-        </g>
-        <g id="Group_9" data-name="Group 9" transform="translate(4.149 40) rotate(-90)">
-          <rect id="Rectangle_8-2" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-          <rect id="Rectangle_9-2" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202"/>
-        </g>
-        <path id="play-button-3" data-name="play-button" class="cls-1" d="M9.212,3.464,5.69.03A.093.093,0,0,0,5.565.02.19.19,0,0,0,5.5.172V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02.1.1,0,0,0,.069-.03L9.212,3.746a.216.216,0,0,0,0-.283Z" transform="translate(1.974 16.418)"/>
-        <path id="play-button-4" data-name="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(32.354 23.628) rotate(180)"/>
-      </g>
-      <rect id="Rectangle_13" data-name="Rectangle 13" class="cls-1" width="12.805" height="12.805" rx="1" transform="translate(35.796 133.79)"/>
-    </g>
-    <g id="Group_21" data-name="Group 21" transform="translate(-0.419 139)">
-      <g id="Group_15-2" data-name="Group 15" transform="translate(22.419 120)">
-        <g id="Group_8-2" data-name="Group 8" transform="translate(0 4.149)">
-          <rect id="Rectangle_8-3" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-          <rect id="Rectangle_9-3" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(0)"/>
-        </g>
-        <g id="Group_9-2" data-name="Group 9" transform="translate(4.149 40) rotate(-90)">
-          <rect id="Rectangle_8-4" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-          <rect id="Rectangle_9-4" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202"/>
-        </g>
-      </g>
-      <rect id="Rectangle_13-2" data-name="Rectangle 13" class="cls-1" width="18.714" height="18.714" rx="1" transform="translate(32.841 130.835)"/>
-    </g>
-    <g id="Group_22" data-name="Group 22" transform="translate(-0.419 1)">
-      <g id="Group_8-3" data-name="Group 8" transform="translate(22.419 313.149)">
-        <rect id="Rectangle_8-5" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-        <rect id="Rectangle_9-5" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(0)"/>
-      </g>
-      <g id="Group_9-3" data-name="Group 9" transform="translate(26.568 349) rotate(-90)">
-        <rect id="Rectangle_8-6" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-        <rect id="Rectangle_9-6" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202"/>
-      </g>
-      <rect id="Rectangle_17" data-name="Rectangle 17" class="cls-1" width="10.835" height="10.835" rx="1" transform="translate(27.916 314.91)"/>
-      <rect id="Rectangle_18" data-name="Rectangle 18" class="cls-1" width="10.835" height="10.835" rx="1" transform="translate(46.63 314.91)"/>
-      <rect id="Rectangle_19" data-name="Rectangle 19" class="cls-1" width="10.835" height="10.835" rx="1" transform="translate(27.916 332.639)"/>
-      <rect id="Rectangle_20" data-name="Rectangle 20" class="cls-1" width="10.835" height="10.835" rx="1" transform="translate(46.63 332.639)"/>
-    </g>
-    <g id="Group_20" data-name="Group 20" transform="translate(0.049 -92.225)">
-      <g id="Group_14" data-name="Group 14" transform="translate(21.951 249.225)">
-        <g id="Group_13" data-name="Group 13" transform="translate(5.837 16.493)">
-          <path id="play-button-5" data-name="play-button" class="cls-1" d="M9.212,3.466,5.69.03A.093.093,0,0,0,5.565.02.19.19,0,0,0,5.5.172V7.044a.191.191,0,0,0,.065.152.1.1,0,0,0,.056.02.1.1,0,0,0,.069-.03L9.212,3.749a.217.217,0,0,0,0-.283Z" transform="translate(19.049 0)"/>
-          <path id="play-button-6" data-name="play-button" class="cls-1" d="M3.712,3.466.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.172V7.044A.191.191,0,0,0,.065,7.2a.1.1,0,0,0,.056.02.1.1,0,0,0,.069-.03L3.712,3.749a.217.217,0,0,0,0-.283Z" transform="translate(3.765 7.215) rotate(180)"/>
-        </g>
-        <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-1" width="2.403" height="39.971" rx="1.202" transform="translate(0 0.029)"/>
-        <rect id="Rectangle_6" data-name="Rectangle 6" class="cls-1" width="2.403" height="39.971" rx="1.202" transform="translate(37.597)"/>
-      </g>
-      <rect id="Rectangle_16" data-name="Rectangle 16" class="cls-1" width="13.79" height="12.814" rx="1" transform="translate(34.804 262.803)"/>
-    </g>
-    <g id="Group_19" data-name="Group 19" transform="translate(0.138 23.387)">
-      <g id="Group_11" data-name="Group 11" transform="translate(21.862 184.613)">
-        <path id="play-button-7" data-name="play-button" class="cls-1" d="M3.712,3.469.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.172V7.049A.191.191,0,0,0,.065,7.2a.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.19L3.712,3.752a.217.217,0,0,0,0-.283Z" transform="translate(23.524 30.386) rotate(90)"/>
-        <path id="play-button-8" data-name="play-button" class="cls-1" d="M3.712,3.469.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.172V7.049A.191.191,0,0,0,.065,7.2a.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.19L3.712,3.752a.217.217,0,0,0,0-.283Z" transform="translate(16.304 9.601) rotate(-90)"/>
-        <rect id="Rectangle_1-2" data-name="Rectangle 1" class="cls-1" width="2.403" height="40" rx="1.202" transform="translate(40) rotate(90)"/>
-        <rect id="Rectangle_6-2" data-name="Rectangle 6" class="cls-1" width="2.403" height="40" rx="1.202" transform="translate(40 37.597) rotate(90)"/>
-      </g>
-      <rect id="Rectangle_15" data-name="Rectangle 15" class="cls-1" width="13.81" height="14.775" rx="1" transform="translate(34.821 196.814)"/>
-    </g>
-    <g id="Group_17" data-name="Group 17" transform="translate(-0.33 -0.387)">
-      <g id="Group_12" data-name="Group 12" transform="translate(22.33 55.387)">
-        <g id="Group_6" data-name="Group 6" transform="translate(16.309 5.866)">
-          <path id="play-button-9" data-name="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(7.21 24.549) rotate(90)"/>
-          <path id="play-button-10" data-name="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(0 3.765) rotate(-90)"/>
-        </g>
-        <g id="Group_4" data-name="Group 4" transform="translate(0 4.149)">
-          <rect id="Rectangle_8-7" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-          <rect id="Rectangle_9-7" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202"/>
-        </g>
-        <g id="Group_5" data-name="Group 5" transform="translate(4.149 40) rotate(-90)">
-          <rect id="Rectangle_8-8" data-name="Rectangle 8" class="cls-1" width="2.403" height="31.702" rx="1.202" transform="translate(37.597)"/>
-          <rect id="Rectangle_9-8" data-name="Rectangle 9" class="cls-1" width="2.403" height="31.702" rx="1.202"/>
-        </g>
-        <g id="Group_7" data-name="Group 7" transform="translate(34.071 16.418) rotate(90)">
-          <path id="play-button-11" data-name="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(7.21 24.549) rotate(90)"/>
-          <path id="play-button-12" data-name="play-button" class="cls-1" d="M3.712,3.464.19.03A.093.093,0,0,0,.065.02.19.19,0,0,0,0,.171V7.038a.19.19,0,0,0,.065.152.1.1,0,0,0,.056.02A.1.1,0,0,0,.19,7.18L3.712,3.746a.216.216,0,0,0,0-.283Z" transform="translate(0 3.765) rotate(-90)"/>
-        </g>
-      </g>
-      <rect id="Rectangle_14" data-name="Rectangle 14" class="cls-1" width="12.805" height="12.805" rx="1" transform="translate(35.795 68.795)"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="-126.2 -71.9 53.2 549.1" style="enable-background:new -126.2 -71.9 53.2 549.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1D788B;}
+</style>
+<g id="Group_23" transform="translate(1990)">
+	<g id="Group_18" transform="translate(-0.419 -14)">
+		<g id="Group_15" transform="translate(22.419 120)">
+			<path id="play-button" class="st0" d="M-2111.3-48.7l-3.4,3.5c0,0,0,0.1,0,0.1c0,0,0.1,0.1,0.2,0.1h6.9c0.1,0,0.1,0,0.2-0.1
+				c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1l-3.4-3.5C-2111.1-48.8-2111.2-48.8-2111.3-48.7L-2111.3-48.7z"/>
+			<path id="play-button-2" class="st0" d="M-2111-66.1l3.4-3.5c0,0,0-0.1,0-0.1c0,0-0.1-0.1-0.2-0.1h-6.9c-0.1,0-0.1,0-0.2,0.1
+				c0,0,0,0,0,0.1c0,0,0,0.1,0,0.1l3.4,3.5C-2111.2-66.1-2111.1-66.1-2111-66.1L-2111-66.1z"/>
+			<g id="Group_8" transform="translate(0 4.149)">
+				<path id="Rectangle_8" class="st0" d="M-2092.2-77.4L-2092.2-77.4c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-2093.4-76.9-2092.9-77.4-2092.2-77.4z"/>
+				<path id="Rectangle_9" class="st0" d="M-2129.8-77.4L-2129.8-77.4c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-2131-76.9-2130.5-77.4-2129.8-77.4z"/>
+			</g>
+			<g id="Group_9" transform="translate(4.149 40) rotate(-90)">
+				<path id="Rectangle_8-2" class="st0" d="M116.2-2131L116.2-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C115-2130.5,115.6-2131,116.2-2131z"/>
+				<path id="Rectangle_9-2" class="st0" d="M78.6-2131L78.6-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C77.4-2130.5,78-2131,78.6-2131z"/>
+			</g>
+			<path id="play-button-3" class="st0" d="M-2119.8-57.6l-3.5-3.4c0,0-0.1,0-0.1,0c0,0-0.1,0.1-0.1,0.2v6.9c0,0.1,0,0.1,0.1,0.2
+				c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0l3.5-3.4C-2119.8-57.4-2119.8-57.5-2119.8-57.6L-2119.8-57.6z"/>
+			<path id="play-button-4" class="st0" d="M-2102.4-57.3l3.5,3.4c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.2v-6.9c0-0.1,0-0.1-0.1-0.2
+				c0,0,0,0-0.1,0c0,0-0.1,0-0.1,0l-3.5,3.4C-2102.5-57.5-2102.5-57.4-2102.4-57.3L-2102.4-57.3z"/>
+		</g>
+		<path id="Rectangle_13" class="st0" d="M-2094.2,56.4h10.8c0.6,0,1,0.4,1,1v10.8c0,0.6-0.4,1-1,1h-10.8c-0.6,0-1-0.4-1-1V57.4
+			C-2095.2,56.8-2094.8,56.4-2094.2,56.4z"/>
+	</g>
+	<g id="Group_21" transform="translate(-0.419 139)">
+		<g id="Group_15-2" transform="translate(22.419 120)">
+			<g id="Group_8-2" transform="translate(0 4.149)">
+				<path id="Rectangle_8-3" class="st0" d="M-2092.2,72.6L-2092.2,72.6c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2V73.8C-2093.4,73.1-2092.9,72.6-2092.2,72.6z"/>
+				<path id="Rectangle_9-3" class="st0" d="M-2129.8,72.6L-2129.8,72.6c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2V73.8C-2131,73.1-2130.5,72.6-2129.8,72.6z"/>
+			</g>
+			<g id="Group_9-2" transform="translate(4.149 40) rotate(-90)">
+				<path id="Rectangle_8-4" class="st0" d="M-33.8-2131L-33.8-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-35-2130.5-34.4-2131-33.8-2131z"/>
+				<path id="Rectangle_9-4" class="st0" d="M-71.4-2131L-71.4-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-72.6-2130.5-72-2131-71.4-2131z"/>
+			</g>
+		</g>
+		<path id="Rectangle_13-2" class="st0" d="M-2097.2,203.4h16.7c0.6,0,1,0.4,1,1v16.7c0,0.6-0.4,1-1,1h-16.7c-0.6,0-1-0.4-1-1v-16.7
+			C-2098.2,203.8-2097.7,203.4-2097.2,203.4z"/>
+	</g>
+	<g id="Group_22" transform="translate(-0.419 1)">
+		<g id="Group_8-3" transform="translate(22.419 313.149)">
+			<path id="Rectangle_8-5" class="st0" d="M-2092.2,122.6L-2092.2,122.6c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+				c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-2093.4,123.1-2092.9,122.6-2092.2,122.6z"/>
+			<path id="Rectangle_9-5" class="st0" d="M-2129.8,122.6L-2129.8,122.6c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+				c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-2131,123.1-2130.5,122.6-2129.8,122.6z"/>
+		</g>
+		<g id="Group_9-3" transform="translate(26.568 349) rotate(-90)">
+			<path id="Rectangle_8-6" class="st0" d="M-83.8-2131L-83.8-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+				c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-85-2130.5-84.4-2131-83.8-2131z"/>
+			<path id="Rectangle_9-6" class="st0" d="M-121.4-2131L-121.4-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+				c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-122.6-2130.5-122-2131-121.4-2131z"/>
+		</g>
+		<path id="Rectangle_17" class="st0" d="M-2102.1,437.5h8.8c0.6,0,1,0.4,1,1v8.8c0,0.6-0.4,1-1,1h-8.8c-0.6,0-1-0.4-1-1v-8.8
+			C-2103.1,437.9-2102.7,437.5-2102.1,437.5z"/>
+		<path id="Rectangle_18" class="st0" d="M-2083.4,437.5h8.8c0.6,0,1,0.4,1,1v8.8c0,0.6-0.4,1-1,1h-8.8c-0.6,0-1-0.4-1-1v-8.8
+			C-2084.4,437.9-2084,437.5-2083.4,437.5z"/>
+		<path id="Rectangle_19" class="st0" d="M-2102.1,455.2h8.8c0.6,0,1,0.4,1,1v8.8c0,0.6-0.4,1-1,1h-8.8c-0.6,0-1-0.4-1-1v-8.8
+			C-2103.1,455.7-2102.7,455.2-2102.1,455.2z"/>
+		<path id="Rectangle_20" class="st0" d="M-2083.4,455.2h8.8c0.6,0,1,0.4,1,1v8.8c0,0.6-0.4,1-1,1h-8.8c-0.6,0-1-0.4-1-1v-8.8
+			C-2084.4,455.7-2084,455.2-2083.4,455.2z"/>
+	</g>
+	<g id="Group_20" transform="translate(0.049 -92.225)">
+		<g id="Group_14" transform="translate(21.951 249.225)">
+			<g id="Group_13" transform="translate(5.837 16.493)">
+				<path id="play-button-5" class="st0" d="M-2102.8-24l-3.5-3.4c0,0-0.1,0-0.1,0c0,0-0.1,0.1-0.1,0.2v6.9c0,0.1,0,0.1,0.1,0.2
+					c0,0,0,0,0.1,0c0,0,0.1,0,0.1,0l3.5-3.4C-2102.7-23.8-2102.7-23.9-2102.8-24z"/>
+				<path id="play-button-6" class="st0" d="M-2131-23.7l3.5,3.4c0,0,0.1,0,0.1,0c0,0,0.1-0.1,0.1-0.2v-6.9c0-0.1,0-0.1-0.1-0.2
+					c0,0,0,0-0.1,0c0,0-0.1,0-0.1,0l-3.5,3.4C-2131.1-23.9-2131.1-23.8-2131-23.7z"/>
+			</g>
+			<path id="Rectangle_1" class="st0" d="M-2129.8-27.4L-2129.8-27.4c0.7,0,1.2,0.5,1.2,1.2v37.6c0,0.7-0.5,1.2-1.2,1.2l0,0
+				c-0.7,0-1.2-0.5-1.2-1.2v-37.6C-2131-26.9-2130.5-27.4-2129.8-27.4z"/>
+			<path id="Rectangle_6" class="st0" d="M-2092.2-27.4L-2092.2-27.4c0.7,0,1.2,0.5,1.2,1.2v37.6c0,0.7-0.5,1.2-1.2,1.2l0,0
+				c-0.7,0-1.2-0.5-1.2-1.2v-37.6C-2093.4-26.9-2092.9-27.4-2092.2-27.4z"/>
+		</g>
+		<path id="Rectangle_16" class="st0" d="M-2095.2,235.4h11.8c0.6,0,1,0.4,1,1v10.8c0,0.6-0.4,1-1,1h-11.8c-0.6,0-1-0.4-1-1v-10.8
+			C-2096.2,235.8-2095.8,235.4-2095.2,235.4z"/>
+	</g>
+	<g id="Group_19" transform="translate(0.138 23.387)">
+		<g id="Group_11" transform="translate(21.862 184.613)">
+			<path id="play-button-7" class="st0" d="M-2111,56.7l3.4-3.5c0,0,0-0.1,0-0.1c0,0-0.1-0.1-0.2-0.1h-6.9c-0.1,0-0.1,0-0.2,0.1
+				c0,0,0,0,0,0.1c0,0,0,0.1,0,0.1l3.4,3.5C-2111.2,56.7-2111.1,56.7-2111,56.7z"/>
+			<path id="play-button-8" class="st0" d="M-2111.3,28.5l-3.4,3.5c0,0,0,0.1,0,0.1c0,0,0.1,0.1,0.2,0.1h6.9c0.1,0,0.1,0,0.2-0.1
+				c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1l-3.4-3.5C-2111.1,28.4-2111.2,28.4-2111.3,28.5z"/>
+			<path id="Rectangle_1-2" class="st0" d="M-2091,23.8L-2091,23.8c0,0.7-0.5,1.2-1.2,1.2h-37.6c-0.7,0-1.2-0.5-1.2-1.2l0,0
+				c0-0.7,0.5-1.2,1.2-1.2h37.6C-2091.6,22.6-2091,23.1-2091,23.8z"/>
+			<path id="Rectangle_6-2" class="st0" d="M-2091,61.4L-2091,61.4c0,0.7-0.5,1.2-1.2,1.2h-37.6c-0.7,0-1.2-0.5-1.2-1.2l0,0
+				c0-0.7,0.5-1.2,1.2-1.2h37.6C-2091.6,60.2-2091,60.7-2091,61.4z"/>
+		</g>
+		<path id="Rectangle_15" class="st0" d="M-2095.2,219.4h11.8c0.6,0,1,0.4,1,1v12.8c0,0.6-0.4,1-1,1h-11.8c-0.6,0-1-0.4-1-1v-12.8
+			C-2096.2,219.8-2095.8,219.4-2095.2,219.4z"/>
+	</g>
+	<g id="Group_17" transform="translate(-0.33 -0.387)">
+		<g id="Group_12" transform="translate(22.33 55.387)">
+			<g id="Group_6" transform="translate(16.309 5.866)">
+				<path id="play-button-9" class="st0" d="M-2127.3-99.2l3.4-3.5c0,0,0-0.1,0-0.1c0,0-0.1-0.1-0.2-0.1h-6.9c-0.1,0-0.1,0-0.2,0.1
+					c0,0,0,0,0,0.1c0,0,0,0.1,0,0.1l3.4,3.5C-2127.5-99.1-2127.4-99.1-2127.3-99.2L-2127.3-99.2z"/>
+				<path id="play-button-10" class="st0" d="M-2127.6-127.4l-3.4,3.5c0,0,0,0.1,0,0.1c0,0,0.1,0.1,0.2,0.1h6.9c0.1,0,0.1,0,0.2-0.1
+					c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1l-3.4-3.5C-2127.4-127.5-2127.5-127.5-2127.6-127.4L-2127.6-127.4z"/>
+			</g>
+			<g id="Group_4" transform="translate(0 4.149)">
+				<path id="Rectangle_8-7" class="st0" d="M-2092.2-127.4L-2092.2-127.4c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-2093.4-126.9-2092.9-127.4-2092.2-127.4z"/>
+				<path id="Rectangle_9-7" class="st0" d="M-2129.8-127.4L-2129.8-127.4c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C-2131-126.9-2130.5-127.4-2129.8-127.4z"/>
+			</g>
+			<g id="Group_5" transform="translate(4.149 40) rotate(-90)">
+				<path id="Rectangle_8-8" class="st0" d="M166.2-2131L166.2-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C165-2130.5,165.6-2131,166.2-2131z"/>
+				<path id="Rectangle_9-8" class="st0" d="M128.6-2131L128.6-2131c0.7,0,1.2,0.5,1.2,1.2v29.3c0,0.7-0.5,1.2-1.2,1.2l0,0
+					c-0.7,0-1.2-0.5-1.2-1.2v-29.3C127.4-2130.5,128-2131,128.6-2131z"/>
+			</g>
+			<g id="Group_7" transform="translate(34.071 16.418) rotate(90)">
+				<path id="play-button-11" class="st0" d="M-123.7,2159.3l3.4-3.5c0,0,0-0.1,0-0.1c0,0-0.1-0.1-0.2-0.1h-6.9
+					c-0.1,0-0.1,0-0.2,0.1c0,0,0,0,0,0.1c0,0,0,0.1,0,0.1l3.4,3.5C-123.9,2159.4-123.8,2159.4-123.7,2159.3L-123.7,2159.3z"/>
+				<path id="play-button-12" class="st0" d="M-124,2131.1l-3.4,3.5c0,0,0,0.1,0,0.1c0,0,0.1,0.1,0.2,0.1h6.9c0.1,0,0.1,0,0.2-0.1
+					c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1l-3.4-3.5C-123.8,2131-123.9,2131-124,2131.1L-124,2131.1z"/>
+			</g>
+		</g>
+		<path id="Rectangle_14" class="st0" d="M-2094.2-58.6h10.8c0.6,0,1,0.4,1,1v10.8c0,0.6-0.4,1-1,1h-10.8c-0.6,0-1-0.4-1-1v-10.8
+			C-2095.2-58.2-2094.8-58.6-2094.2-58.6z"/>
+	</g>
+</g>
 </svg>
